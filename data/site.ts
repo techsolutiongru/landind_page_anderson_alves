@@ -1,10 +1,14 @@
-﻿export const siteConfig = {
+export const siteConfig = {
   name: "Anderson Alves",
-  role: "Especialista em Tecnologia, Gestão de Projetos e Transformação Digital",
+  role: "Analista de TI · CEO da Tech Solution · Tech Lead",
+  // Slogan original mantido exatamente como está:
   tagline:
     "Uma trajetória construída através da tecnologia, inovação e desafios que transformam vidas.",
+  // Missão personalizada e objetiva:
+  mission:
+    "Conectar tecnologia, pessoas e processos para criar soluções que geram valor real, eficiência operacional e transformação sustentável.",
   description:
-    "Anderson Alves — especialista em tecnologia, gestão de projetos e transformação digital. Trajetória em saúde digital, redes, implantação de sistemas e liderança técnica, com um Laboratório de Inteligência Artificial para gerar prompts guiados.",
+    "Anderson Alves — Analista de TI, CEO da Tech Solution e Tech Lead. Especialista em condução de equipes, planejamento de projetos, infraestrutura e implantação de sistemas de alta complexidade.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.techsolutiongru.com.br",
 
   contact: {
@@ -19,215 +23,178 @@
 };
 
 export const nav = [
-  { href: "#historia", label: "História" },
-  { href: "#trajetoria", label: "Trajetória" },
-  { href: "#impacto", label: "Impacto" },
-  { href: "#visao", label: "Visão" },
-  { href: "#galeria", label: "Galeria" },
-  { href: "#techlab-game", label: "Missão 3D" },
-  { href: "#comunidade", label: "Comunidade" },
+  { href: "#top", label: "Início" },
+  { href: "#numeros", label: "Impacto" },
+  { href: "#sobre", label: "Sobre" },
+  { href: "#trajetoria", label: "Carreira" },
+  { href: "#projetos", label: "Projetos & Fotos" },
+  { href: "#techlab-game", label: "Tech Lab" },
   { href: "#laboratorio", label: "Laboratório de IA" },
   { href: "#contato", label: "Contato" },
 ];
 
 export const indicators = [
-  { icon: "Server", label: "Implantação de sistemas" },
-  { icon: "Users", label: "Liderança técnica" },
-  { icon: "Compass", label: "Projetos estratégicos" },
-  { icon: "HeartPulse", label: "Saúde digital" },
-  { icon: "Network", label: "Redes e infraestrutura" },
+  { icon: "Server", label: "Implantação de Sistemas" },
+  { icon: "Users", label: "Liderança Técnica & Gestão" },
+  { icon: "Compass", label: "Planejamento Estratégico" },
+  { icon: "Network", label: "Redes & Infraestrutura" },
+  { icon: "Sparkles", label: "Inteligência Artificial Aplicada" },
 ];
 
-export const heroStats = [
-  { value: "2006", label: "início na tecnologia" },
-  { value: "69", label: "UBS com SISS Saúde implantado" },
-  { value: "4", label: "andares de hospital implantados" },
-];
-
-/* ------------------------------ História ---------------------------------- */
-
-export interface Chapter {
-  id: string;
-  period: string;
-  title: string;
-  paragraphs: string[];
-}
-
-export const storyIntro = {
-  title: "Minha jornada: da curiosidade pela tecnologia à liderança em grandes projetos",
-};
-
-export const chapters: Chapter[] = [
+// FASE 2: Máximo 4 indicadores diretos de impacto, sem ano de início
+export const impactStats = [
   {
-    id: "curiosidade",
-    period: "2006 – 2011",
-    title: "A curiosidade vira ofício",
-    paragraphs: [
-      "Minha trajetória na tecnologia começou em 2006, quando iniciei um curso avançado de informática. Esse primeiro contato despertou minha curiosidade e paixão pela área, levando-me a buscar novos conhecimentos em hardware, manutenção de computadores e redes.",
-      "Durante esse período, percebi como a tecnologia poderia transformar processos e facilitar a rotina das pessoas. Minha primeira experiência profissional aconteceu como jovem aprendiz em uma clínica veterinária, onde apliquei meus conhecimentos realizando melhorias nos computadores, manutenção preventiva e organização dos equipamentos.",
-      "Com o avanço da minha formação, iniciei a faculdade de Redes de Computadores e, em 2011, comecei minha carreira técnica em uma assistência técnica autorizada da Positivo DAF.",
-    ],
+    target: 69,
+    suffix: " UBS",
+    label: "Unidades Básicas de Saúde com sistema informatizado implantado",
+    icon: "Building2",
   },
   {
-    id: "oportunidade",
-    period: "2011 – 2012",
-    title: "Um currículo e um amigo que acreditou",
-    paragraphs: [
-      "Minha trajetória nessa empresa começou como estagiário e durou apenas dois meses, mesmo com excelente desempenho. Na ocasião, o proprietário informou que não conseguiria arcar com os custos do estágio e, por isso, precisei seguir em busca de uma nova oportunidade.",
-      "Foi então que, em sala de aula, compartilhei minha situação com alguns colegas e mostrei meu currículo. Nesse momento, um grande amigo, Eduardo Nucci, acreditou no meu potencial e levou meu currículo ao seu trabalho. Na época, ele já era concursado e atuava como supervisor de suporte da Secretaria da Saúde. Graças a esse gesto, fui chamado para uma entrevista e iniciei uma nova etapa da minha trajetória profissional.",
-    ],
+    target: 4,
+    suffix: " Andares",
+    label: "Estrutura hospitalar de alta complexidade integrada do zero",
+    icon: "Layers",
   },
   {
-    id: "saude",
-    period: "2012 – 2017",
-    title: "Secretaria da Saúde: do suporte às redes",
-    paragraphs: [
-      "Em 2012, comecei minha atuação na Secretaria da Saúde, onde permaneci até 2017. Nesse período, evoluí tecnicamente e profissionalmente, passando da área de suporte para a equipe de redes. Ao longo dessa jornada, assumi responsabilidades relacionadas à liderança técnica, designação de chamados, análise e aprovação de plantas, vistoria de projetos e acompanhamento de infraestrutura.",
-      "Tive o privilégio de participar de projetos importantes, como a Infovia municipal, responsável pela interligação de fibra óptica em todo o município, além de iniciativas ligadas à telefonia VoIP, telefonia digital e telefonia analógica.",
-    ],
+    target: 100,
+    prefix: "+",
+    suffix: "%",
+    label: "Continuidade operacional com triagem ágil e fluxos integrados",
+    icon: "HeartPulse",
   },
   {
-    id: "mmn-evomel",
-    period: "2015 – 2018",
-    title: "Empreendedorismo e liderança: A Jornada **Evomel**",
-    paragraphs: [
-      "Entre 2015 e 2018, vivenciei uma marcante etapa empreendedora no marketing de relacionamento através da Evomel, empresa de produtos naturais, alcançando a graduação Diamante.",
-      "Essa vivência foi fundamental para o meu desenvolvimento em liderança e relações humanas: atuei na formação e condução de equipes em Jacareí, participei ativamente da abertura e expansão regional em Colatina (Espírito Santo) e liderei equipes em Guarulhos.",
-      "Aprendi na prática sobre liderança de pessoas, comunicação pública, negociação, organização de eventos e resiliência — competências de gestão que se tornaram diferenciais essenciais na condução de grandes projetos e equipes de tecnologia.",
-    ],
-  },
-  {
-    id: "mmn-terra",
-    period: "2018",
-    title: "Expansão comercial: **Horas Essenciais / Terra**",
-    paragraphs: [
-      "Em 2018, participei do projeto comercial associado à iniciativa Horas Essenciais / Terra, alcançando a posição de Executivo.",
-      "O modelo estava fundamentado no consumo inteligente de produtos com desconto e na construção de renda residual, proporcionando uma compreensão aprofundada de alavancagem comercial, treinamento de parceiros, oratória e expansão estratégica de redes.",
-    ],
-  },
-  {
-    id: "techsolution",
-    period: "2017 – 2021",
-    title: "Nasce a **Tech Solution**",
-    paragraphs: [
-      "Em 2017, com o encerramento do contrato após mudança de gestão, recebi alguns colegas em casa e idealizamos a criação de uma empresa de tecnologia. Foi ali que nasceu o nome **Tech Solution**, com sua identidade e proposta de valor inicial.",
-      "Em 2021, decidi dar vida definitiva à iniciativa. Assumi a liderança da **Tech Solution** como **CEO**, consolidando-a como uma empresa de TI voltada ao atendimento de pequenas, médias e grandes empresas em suporte técnico, manutenção corporativa, restauração de computadores, consultoria em redes e soluções em tecnologia.",
-    ],
-  },
-  {
-    id: "sissaude",
-    period: "2020 – hoje",
-    title: "**SISS Saúde**: tecnologia aplicada à saúde pública",
-    paragraphs: [
-      "A partir de 2020, ingressei em um dos maiores desafios da minha carreira: a sustentação e implantação do sistema **SISS Saúde** na rede pública de saúde.",
-      "Atuei diretamente na substituição do sistema legado e na implantação do **SISS Saúde** em 69 Unidades Básicas de Saúde, estruturando processos de recepção, prontuário e fluxo de atendimento.",
-      "Nas unidades de urgência e emergência, a partir da UPA Cumbica, liderei em 2021 a implantação da triagem invertida — inovação operacional onde o paciente é classificado clinicamente antes do cadastro administrativo, garantindo prioridade absoluta aos casos graves.",
-      "Em 2023 assumi a posição de **Tech Lead**, coordenando equipes técnicas, e em 2024 conduzi a implantação completa do sistema no **Hospital Municipal Pimentas Bonsucesso**, integrando quatro andares, clínicas cirúrgicas, neonatologia, psiquiatria e a migração de prontuários antigos.",
-    ],
-  },
-  {
-    id: "ia-evolucao",
-    period: "2024 – Atualidade",
-    title: "Inteligência Artificial & Evolução Contínua",
-    paragraphs: [
-      "Com a evolução exponencial da tecnologia, dedico meus estudos atuais à Inteligência Artificial aplicada, engenharia de prompts, ferramentas digitais, automações e arquitetura de software.",
-      "O foco dessa fase é a experimentação prática: desenvolver prompts guiados de alta precisão, criar soluções de suporte inteligente e conectar IA aos fluxos reais de trabalho de empresas e profissionais.",
-      "Essa postura reflete meu compromisso com o aprendizado contínuo: unir sólida experiência de campo e gestão de projetos com as tecnologias que estão redefinindo o futuro.",
-    ],
-  },
-  {
-    id: "hoje",
-    period: "Atualidade",
-    title: "Gestão estratégica e o desafio do **SAMU**",
-    paragraphs: [
-      "Com pós-graduação em Gestão de Projetos, atuo na linha de frente estratégica, apoiando a tomada de decisões, governança de TI e otimização contínua de processos.",
-      "Atualmente, conduzo a implantação e customização do **SISS Saúde** no **SAMU**, visando substituir o sistema legado SIAGRU por uma plataforma ágil, moderna e integrada à realidade do atendimento móvel de urgência.",
-    ],
+    target: 15,
+    prefix: "+",
+    suffix: " Anos",
+    label: "Trajetória sólida em tecnologia, liderança técnica e negócios",
+    icon: "Award",
   },
 ];
 
-export const storyClosing =
-  "Essa história continua sendo escrita por meio da tecnologia, da inovação e do compromisso com a transformação.";
-
-/* ------------------------------ Timeline ---------------------------------- */
-
-export interface TimelineItem {
-  year: string;
-  title: string;
-  points: string[];
-}
-
-export const timeline: TimelineItem[] = [
-  { year: "2006", title: "O primeiro contato", points: ["Curso avançado de informática", "Descoberta da paixão por tecnologia"] },
-  { year: "2007–2010", title: "Base técnica", points: ["Hardware e manutenção", "Redes locais", "Primeiras experiências práticas"] },
-  { year: "2011", title: "Formação técnica", points: ["Faculdade de Redes de Computadores", "Assistência autorizada Positivo DAF"] },
-  { year: "2012–2017", title: "Secretaria da Saúde", points: ["Suporte técnico e redes", "Liderança técnica", "Infovia municipal em fibra", "Telefonia VoIP e digital"] },
-  { year: "2015–2018", title: "Liderança e Expansão (Evomel)", points: ["Graduação Diamante", "Expansão regional (Jacareí, Colatina/ES, Guarulhos)", "Gestão e desenvolvimento de pessoas"] },
-  { year: "2017", title: "Conceito Tech Solution", points: ["Nascimento da ideia e identidade da Tech Solution"] },
-  { year: "2018", title: "Projeto Horas Essenciais (Terra)", points: ["Graduação Executivo", "Estratégia comercial e vendas", "Treinamento de equipes"] },
-  { year: "2020", title: "Urgência & Emergência", points: ["Início da atuação no SISS Saúde", "Apoio e sustentação na UPA Cumbica"] },
-  { year: "2021", title: "Triagem Invertida & Tech Solution", points: ["Implantação pioneira da triagem invertida", "Lançamento oficial da Tech Solution como CEO"] },
-  { year: "2023", title: "Tech Lead", points: ["Liderança técnica", "Gestão de projetos e equipes de sustentação"] },
-  { year: "2024", title: "Hospital Pimentas Bonsucesso", points: ["Implantação hospitalar em 4 andares", "Migração de prontuários antigos", "Integração clínica completa"] },
-  { year: "Atualidade", title: "Gestão Estratégica, IA & SAMU", points: ["Estudos contínuos em Inteligência Artificial e Prompts", "Implantação do SISS Saúde no SAMU", "Comunidade TechSolution TechLab"] },
-];
-
-/* ------------------------------ Impacto ----------------------------------- */
-
-export const impact = [
-  { icon: "HeartPulse", title: "Saúde Digital", text: "Implantação de sistemas em UBS, UPA, hospital e SAMU, apoiando a modernização do atendimento e a melhoria da operação." },
-  { icon: "Cable", title: "Infraestrutura e Redes", text: "Atuação em redes, fibra óptica, conectividade, telefonia e infraestrutura tecnológica." },
-  { icon: "Users", title: "Gestão e Liderança", text: "Liderança técnica, organização de equipes, priorização de demandas, gestão de chamados e apoio à decisão." },
-  { icon: "Zap", title: "Transformação Digital", text: "Projetos que transformam processos, aceleram fluxos e ampliam a eficiência organizacional." },
-  { icon: "Building2", title: "Tech Solution", text: "Empreendedorismo, consultoria e soluções em TI para pequenas, médias e grandes empresas." },
-];
-
-/* ------------------------------ Visão ------------------------------------- */
-
-export const vision = {
-  quote: "Minha missão é conectar tecnologia, pessoas e processos para criar soluções que realmente gerem impacto.",
-  text: "Acredito em tecnologia com propósito: ferramentas só valem quando melhoram a vida de quem atende e de quem é atendido.",
-  pillars: [
-    { title: "Tecnologia com propósito", text: "Cada sistema implantado existe para resolver um problema real de pessoas reais." },
-    { title: "Eficiência operacional", text: "Processos mais simples, fluxos mais rápidos e menos retrabalho no dia a dia." },
-    { title: "Inovação aplicada", text: "Ideias que saem do papel e mudam a forma como a operação funciona." },
-    { title: "Gestão orientada a resultados", text: "Decisões apoiadas em dados, prioridades claras e entregas acompanhadas." },
-    { title: "Melhoria contínua", text: "Cada entrega é ponto de partida para a próxima evolução." },
+// FASE 3: SOBRE E ATUAÇÃO (Liderança, gestão e empreendedorismo)
+export const aboutProfile = {
+  eyebrow: "Sobre e Atuação",
+  title: "Liderança técnica, gestão de pessoas e **planejamento de soluções**",
+  lead:
+    "Com visão estratégica e perfil analítico, conduzo equipes multidisciplinares e projetos de tecnologia focando no alinhamento entre processos e resultados.",
+  cards: [
+    {
+      icon: "Users",
+      title: "Liderança e Gestão de Pessoas",
+      description:
+        "Condução humanizada de times técnicos, mentoria de profissionais, delegação estratégica e alinhamento de metas com comunicação transparente e empática.",
+    },
+    {
+      icon: "Compass",
+      title: "Planejamento e Implantação de Sistemas",
+      description:
+        "Visão end-to-end em implantações de grande porte: mapeamento de requisitos, arquitetura de processos, treinamento de usuários e mitigação de riscos.",
+    },
+    {
+      icon: "Building2",
+      title: "Empreendedor em TI & CEO",
+      description:
+        "CEO da Tech Solution desde 2021, desenvolvendo consultoria corporativa, sustentação de ambientes e soluções inteligentes de TI para empresas.",
+    },
+    {
+      icon: "HeartPulse",
+      title: "Gestão Estratégica em Urgência",
+      description:
+        "Passagem relevante pelo SAMU, coordenando a modernização e transição estratégica de plataformas críticas de atendimento móvel com alta disponibilidade.",
+    },
   ],
 };
 
-/* ------------------------------ Galeria de Projetos em Campo ----------------------------------- */
-
-export interface FieldProject {
-  id: string;
-  title: string;
-  location: string;
+// FASE 4: LINHA DO TEMPO (Marco sucinto de no máximo 2 linhas cada)
+export interface CareerMilestone {
   year: string;
-  caption: string;
-  /** Caminho relativo da imagem ou undefined para renderizar fallback geométrico SVG */
-  image?: string;
+  badge: string;
+  title: string;
+  company: string;
+  summary: string;
 }
 
-export const fieldProjects: FieldProject[] = [
+export const careerTimeline: CareerMilestone[] = [
+  {
+    year: "2011",
+    badge: "Formação",
+    title: "Redes de Computadores",
+    company: "Graduação Técnica & Positivo DAF",
+    summary: "Início da base sólida em arquitetura de redes locais, manutenção de hardware e suporte corporativo.",
+  },
+  {
+    year: "2012 – 2017",
+    badge: "Infraestrutura",
+    title: "Infovia e Conectividade Pública",
+    company: "Secretaria de Saúde",
+    summary: "Atuação em suporte avançado, interligação de fibra óptica municipal, telefonia digital e liderança técnica.",
+  },
+  {
+    year: "2015 – 2018",
+    badge: "Liderança",
+    title: "Desenvolvimento de Equipes",
+    company: "Evomel (Nível Diamante)",
+    summary: "Condução de grandes equipes regionais, oratória executiva, negociação e formação de lideranças de alta performance.",
+  },
+  {
+    year: "2018",
+    badge: "Comercial",
+    title: "Expansão Comercial e Estratégia",
+    company: "dōTERRA (Nível Executivo)",
+    summary: "Gestão de expansão estratégica de parceiros, treinamentos comerciais e desenvolvimento de mercado de bem-estar.",
+  },
+  {
+    year: "2021 – hoje",
+    badge: "Empreendedorismo",
+    title: "CEO & Fundador",
+    company: "Tech Solution",
+    summary: "Liderança da Tech Solution, provendo consultoria em TI, infraestrutura de redes e suporte corporativo especializado.",
+  },
+  {
+    year: "2023 – hoje",
+    badge: "Liderança Técnica",
+    title: "Tech Lead & Gestão de Projetos",
+    company: "Implantação de Sistemas",
+    summary: "Liderança técnica em sistemas de grande porte, integrando 69 UBSs, 4 andares hospitalares e inovação de processos.",
+  },
+];
+
+// FASE 5: PROJETOS COM VALOR AGREGADO AO PERFIL
+export interface ProjectSpec {
+  id: string;
+  title: string;
+  scope: string;
+  valueAdded: string;
+  metrics: string;
+}
+
+export const projectsList: ProjectSpec[] = [
   {
     id: "hospital-pimentas",
     title: "Hospital Municipal Pimentas Bonsucesso",
-    location: "Guarulhos, SP",
-    year: "2024",
-    caption: "Estrutura hospitalar com 4 andares e múltiplas clínicas especializadas integrada ao SISS Saúde.",
+    scope: "Implantação hospitalar vertical em 4 andares completos e clínicas cirúrgicas.",
+    valueAdded: "Demonstra capacidade comprovada de gerenciar infraestrutura e sistemas em ambientes críticos de alta pressão.",
+    metrics: "4 andares integrados · Milhares de prontuários migrados",
   },
   {
-    id: "upa-cumbica",
-    title: "UPA Cumbica — Urgência e Emergência",
-    location: "Guarulhos, SP",
-    year: "2020 – 2021",
-    caption: "Implantação pioneira do modelo de triagem invertida para agilidade clínica no atendimento de urgência.",
+    id: "ubs-redes",
+    title: "Rede Básica de 69 Unidades de Saúde",
+    scope: "Digitalização e implantação padronizada de prontuário eletrônico e recepção unificada.",
+    valueAdded: "Evidencia domínio em projetos de larga escala geográfica, padronização de processos e capacitação de equipes.",
+    metrics: "69 UBSs operacionais · Treinamento de centenas de profissionais",
   },
   {
-    id: "infovia-redes",
-    title: "Infovia Municipal & Infraestrutura de Rede",
-    location: "Secretaria de Saúde",
-    year: "2012 – 2017",
-    caption: "Interligação em fibra óptica, telefonia VoIP e convergência de redes para mais de 69 UBSs.",
+    id: "triagem-invertida",
+    title: "Triagem Invertida na UPA Cumbica",
+    scope: "Reformulação do fluxo de acolhimento para priorizar a classificação clínica imediata.",
+    valueAdded: "Comprova visão de inovação operacional e foco na experiência humana, reduzindo tempo de resposta a casos graves.",
+    metrics: "Tempo de resposta clínico otimizado em atendimento de urgência",
+  },
+  {
+    id: "samu-modernizacao",
+    title: "Modernização Estratégica do SAMU",
+    scope: "Planejamento e transição de sistemas legados para plataformas integradas de resposta rápida.",
+    valueAdded: "Reflete maturidade em governança de TI, planejamento de contingência e modernização de serviços essenciais.",
+    metrics: "Agilidade no despacho e integração com a rede de saúde",
   },
 ];

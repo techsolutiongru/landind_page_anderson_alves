@@ -1,15 +1,13 @@
-﻿import { Header } from "@/components/Header";
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FloatingActions } from "@/components/FloatingActions";
 import { Hero } from "@/sections/Hero";
-import { Story } from "@/sections/Story";
-import { Timeline } from "@/sections/Timeline";
-import { TrajectoryGallery } from "@/sections/TrajectoryGallery";
-import { Impact } from "@/sections/Impact";
-import { Vision } from "@/sections/Vision";
-import { TechLabGame } from "@/sections/TechLabGame";
-import { Lab } from "@/sections/Lab";
-import { Community } from "@/sections/Community";
-import { ContentHub } from "@/sections/ContentHub";
+import { ImpactNumbers } from "@/sections/ImpactNumbers";
+import { AboutProfile } from "@/sections/AboutProfile";
+import { CareerTimeline } from "@/sections/CareerTimeline";
+import { ProjectsAndGallery } from "@/sections/ProjectsAndGallery";
+import { TechLab } from "@/sections/TechLab";
+import { AILab } from "@/sections/AILab";
 import { Contact } from "@/sections/Contact";
 import { siteConfig } from "@/data/site";
 
@@ -17,19 +15,19 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: siteConfig.name,
-  jobTitle: "CEO da Tech Solution · Tech Lead · Gestão de Projetos",
+  jobTitle: "Analista de TI · CEO da Tech Solution · Tech Lead",
   description: siteConfig.description,
   url: siteConfig.url,
   image: `${siteConfig.url}/anderson-alves.jpg`,
   worksFor: { "@type": "Organization", name: "Tech Solution" },
   knowsAbout: [
-    "Gestão de projetos",
-    "Transformação digital",
-    "Saúde digital",
-    "Redes de computadores",
-    "Implantação de sistemas",
-    "Inteligência Artificial",
+    "Liderança Técnica",
+    "Gestão de Projetos e Pessoas",
+    "Implantação de Sistemas",
+    "Redes de Computadores",
+    "Inteligência Artificial Aplicada",
     "Engenharia de Prompts",
+    "Infraestrutura de TI",
   ],
 };
 
@@ -42,21 +40,43 @@ export default function Home() {
       >
         Pular para o conteúdo
       </a>
+
+      {/* Cabeçalho Fixo Superior */}
       <Header />
+
+      {/* Botões Flutuantes Fixos de Contato (WhatsApp, LinkedIn, Email) */}
+      <FloatingActions />
+
+      {/* Ordem estrita das 8 seções */}
       <main id="conteudo">
+        {/* 1. Hero */}
         <Hero />
-        <Story />
-        <Timeline />
-        <TrajectoryGallery />
-        <Impact />
-        <Vision />
-        <TechLabGame />
-        <Lab />
-        <Community />
-        <ContentHub />
+
+        {/* 2. Números e Impacto */}
+        <ImpactNumbers />
+
+        {/* 3. Sobre e Atuação (Liderança, Gestão de Pessoas, Tech Solution, SAMU) */}
+        <AboutProfile />
+
+        {/* 4. Linha do Tempo (Carreira com dōTERRA e marcos sucintos) */}
+        <CareerTimeline />
+
+        {/* 5. Projetos e Galeria com Tela Cheia */}
+        <ProjectsAndGallery />
+
+        {/* 6. Tech Lab (Jogos interativos de lógica, raciocínio e memória) */}
+        <TechLab />
+
+        {/* 7. Laboratório de Inteligência Artificial (Destaque Principal) */}
+        <AILab />
+
+        {/* 8. Contato */}
         <Contact />
       </main>
+
+      {/* Rodapé */}
       <Footer />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

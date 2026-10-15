@@ -1,14 +1,29 @@
-﻿@tailwind base;
+@import "./fonts.css";
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: dark;
+  --paper: #0b0b0c;
+  --ink: #ecebe6;
+  --muted: #8e8d8a;
+  --line: #243041;
+  --accent: #2f9bff;
+  --accent-bright: #3aa3ff;
+  --term-h: 52px;
+  --term-top: 22px;
+  --term-line: #cdd7e3;
+  --term-rule: #243041;
+  --term-cell: rgba(12, 17, 25, 0.6);
+  --term-press: repeating-conic-gradient(#3aa3ff 0 25%, #2f9bff 0 50%) 0 0/4px 4px;
 }
 
 html {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
+  background-color: #0b0b0c;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -18,24 +33,84 @@ html {
 }
 
 body {
-  background-color: #060C17;
-  color: #F6F3EC;
-  font-family: var(--font-sans), system-ui, sans-serif;
+  background-color: #0b0b0c;
+  color: #ecebe6;
+  font-family: 'IBM Plex Sans Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbars */
+/* Keyframes de animação de gravação a Laser das letras — exato do Kerf Silicon DS */
+@keyframes kn-burn {
+  0%   { color: #fff; text-shadow: 0 0 4px #fff, 0 0 14px #9fd0ff, 0 0 30px #2f9bff; }
+  35%  { color: #eaf5ff; text-shadow: 0 0 10px rgba(47, 155, 255, 0.8); }
+  100% { color: inherit; text-shadow: none; }
+}
+
+/* LED breathing animation — silicon plate status LED */
+@keyframes sp-breathe {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.85; }
+}
+
+/* Keyframes da linha varredora do laser */
+@keyframes laser-sweep {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 2px);
+    opacity: 0;
+  }
+}
+
+.animate-laser-sweep {
+  animation: laser-sweep 2s infinite ease-in-out;
+}
+
+/* Classe de queima a laser nos caracteres */
+.laser-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.laser-char.burned {
+  opacity: 1;
+  transform: translateY(0);
+  animation: kn-burn 0.6s ease-out forwards;
+}
+
+/* Linha de escaneamento com brilho elétrico */
+.kn-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #dcecff 12%, #ffffff 50%, #dcecff 88%, transparent);
+  box-shadow: 0 0 10px 1px rgba(47, 155, 255, 0.8), 0 0 20px 2px rgba(47, 155, 255, 0.4);
+}
+
+/* Scrollbar com o visual precision terminal */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A1322;
+  background: #0a0e14;
 }
 ::-webkit-scrollbar-thumb {
-  background: #182843;
-  border-radius: 4px;
+  background: #243041;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #243659;
+  background: #2f9bff;
 }
